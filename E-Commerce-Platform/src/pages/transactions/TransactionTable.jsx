@@ -10,9 +10,9 @@ const last = ["Electronic 1", "Electronic 2", "Electronic 3"];
 
 function TransactionTable() {
   return (
-    <div className="flex  w-full flex-col gap-3">
+    <div className="flex   w-full   flex-col gap-3 mb-3">
       <HeaderTitle title="Transactions" />
-      <div className="w-full h-[22rem] bg-white rounded-md  border border-gray-200  items-center p-4 ">
+      <div className="w-full  bg-white rounded-md  border border-gray-200  items-center p-4 ">
         <div className="flex gap-3 ">
           <div className="flex-1 bg-white">
             <Search

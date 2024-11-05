@@ -4,14 +4,13 @@ import TransactionGrid from "./transactions/TransactionGrid";
 import TransactionChart from "./transactions/TransactionChart";
 import TransactionProgress from "./transactions/TransactionProgress";
 import TransactionTable from "./transactions/TransactionTable";
+import TopHeader from "../components/shared/TopHeader";
 
 function Transactions() {
   return (
-    <div className="p-3 flex flex-col gap-3  ">
+    <div className="p-3 flex  flex-col gap-3  ">
       <div className="">
-        <h1 className="font-inter font-extrabold text-base">
-          Transactions Overview
-        </h1>
+        <TopHeader topHead="Transactions Overview" />
       </div>
 
       <TransactionGrid />
@@ -19,6 +18,7 @@ function Transactions() {
         <TransactionChart />
         <TransactionProgress />
       </div>
+
       <TransactionTable />
     </div>
   );

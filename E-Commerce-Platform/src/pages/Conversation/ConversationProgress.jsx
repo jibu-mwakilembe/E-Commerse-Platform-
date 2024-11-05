@@ -1,11 +1,14 @@
 import React from "react";
 
-function ProgressBar({ progress, item }) {
+function ConversationProgress({ item, progress, value }) {
   return (
     <div className="px-3 py-2">
       <div className="flex justify-between mb-1 ">
-        <span className="text-base text-black">{item}</span>
-        <span className="text-base text-black">{progress}%</span>
+        <div className=" flex gap-2">
+          <span className="text-sm text-gray-500">{item}</span>
+          <span className="text-sm text-blue-500">({progress}%)</span>
+        </div>
+        <span className="text-sm text-black mr-3">{value}</span>
       </div>
       <div className="w-full bg-gray-200 rounded-full h-2">
         <div
@@ -17,4 +20,4 @@ function ProgressBar({ progress, item }) {
   );
 }
 
-export default ProgressBar;
+export default ConversationProgress;

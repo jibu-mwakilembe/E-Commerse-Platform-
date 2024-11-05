@@ -26,7 +26,7 @@ function Sidebar() {
     setIsOpen(!isOpen);
   };
   const classLink =
-    "flex items-center gap-2 font-light px-3 py-2 hover:bg-neutral-700 hover:no-underline active:bg-blue-600 rounded-md text-base";
+    "flex items-center gap-2 font-light px-3 py-2 hover:bg-gray-700 hover:no-underline active:bg-blue-600 rounded-md text-base";
 
   return (
     <div className="flex flex-col w-60 p-1 bg-[#1B1C1E] text-white">

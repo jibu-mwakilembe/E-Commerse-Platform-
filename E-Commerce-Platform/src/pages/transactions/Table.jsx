@@ -26,6 +26,13 @@ const dataTable = [
     Status: "Available",
     Description: "Some short description",
   },
+  {
+    Date: "Jan 25, 2023",
+    ID: "45635",
+    Value: "TZS 120,000",
+    Status: "Available",
+    Description: "Some short description",
+  },
 ];
 
 function Table(props) {

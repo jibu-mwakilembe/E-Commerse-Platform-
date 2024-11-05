@@ -13,10 +13,10 @@ function Header() {
         <span className="text-orange-600 font-inter font-extrabold text-[32px]">
           o
         </span>
-        <span className="text-slate-950 font-inter font-extrabold text-[32px]">
+        <span className="text-gray-700 font-inter font-extrabold text-[32px]">
           p
         </span>
-        <span className="text-neutral-500 font-inter font-extralight text-[32px]">
+        <span className="text-slate-500 font-inter font-extralight text-[32px]">
           Konekt
         </span>
       </div>
