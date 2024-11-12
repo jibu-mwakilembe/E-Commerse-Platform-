@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TopHeader from "../components/shared/TopHeader";
 import Search from "../components/shared/Search";
@@ -6,86 +6,20 @@ import { MenuDefault } from "./transactions/MenuDefault";
 import ProductCard from "./product/ProductCard";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Pagination from "@mui/material/Pagination";
+import { productDataList } from "../store/ProductData";
+import useProductStore from "../store/productStore";
 
 const electronic = ["Electronic 1", "Electronic 2", "Electronic 3"];
 const last = ["Electronic 1", "Electronic 2", "Electronic 3"];
 
-const productData = [
-  {
-    image: "./src/assets/deki.png",
-    name: "PlayStation 5 Gaming Console",
-    details: "White, fairtrade certified, cotton",
-    price: "TZS 2,220,000.12",
-  },
-  {
-    image: "./src/assets/radioplay.png",
-    name: "Mp3 Music Player",
-    details: "White, fairtrade certified, cotton",
-    price: "TZS 20,000.12",
-  },
-  {
-    image: "./src/assets/ammitter.png",
-    name: "Mini Mp3 player",
-    details: "White, fairtrade certified, cotton",
-    price: "TZS 15,000.12",
-  },
-  {
-    image: "./src/assets/radio.png",
-    name: "PlayStation 5 Gaming Console",
-    details: "White, fairtrade certified, cotton",
-    price: "TZS 2,220,000.12",
-  },
-  {
-    image: "./src/assets/radio.png",
-    name: "PlayStation 5 Gaming Console",
-    details: "White, fairtrade certified, cotton",
-    price: "TZS 2,220,000.12",
-  },
-  {
-    image: "./src/assets/radio.png",
-    name: "PlayStation 5 Gaming Console",
-    details: "White, fairtrade certified, cotton",
-    price: "TZS 2,220,000.12",
-  },
-  {
-    image: "./src/assets/radio.png",
-    name: "PlayStation 5 Gaming Console",
-    details: "White, fairtrade certified, cotton",
-    price: "TZS 2,220,000.12",
-  },
-  {
-    image: "./src/assets/radio.png",
-    name: "PlayStation 5 Gaming Console",
-    details: "White, fairtrade certified, cotton",
-    price: "TZS 2,220,000.12",
-  },
-  {
-    image: "./src/assets/radio.png",
-    name: "PlayStation 5 Gaming Console",
-    details: "White, fairtrade certified, cotton",
-    price: "TZS 2,220,000.12",
-  },
-  {
-    image: "./src/assets/ammitter.png",
-    name: "Mini Mp3 player",
-    details: "White, fairtrade certified, cotton",
-    price: "TZS 15,000.12",
-  },
-  {
-    image: "./src/assets/radio.png",
-    name: "PlayStation 5 Gaming Console",
-    details: "White, fairtrade certified, cotton",
-    price: "TZS 2,220,000.12",
-  },
-  {
-    image: "./src/assets/radio.png",
-    name: "PlayStation 5 Gaming Console",
-    details: "White, fairtrade certified, cotton",
-    price: "TZS 2,220,000.12",
-  },
-];
-
 function Products() {
+  const { productLists, getProducts } = useProductStore();
+  useEffect(() => {
+    getProducts();
+  }, [getProducts]);
+  const productData = productLists;
+  // const productData = productDataList;
+
   const [currentPage, setCurrentPage] = useState(1);
   const itemPerPage = 10;
 
@@ -96,10 +30,6 @@ function Products() {
     currentPage * itemPerPage
   );
   const handlePageChange2 = (event, page) => {
-    setCurrentPage(page);
-  };
-
-  const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
@@ -126,8 +56,8 @@ function Products() {
       </div>
       <div className="">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-          {currentProduct.map((item, index) => (
-            <ProductCard product={item} key={index} />
+          {currentProduct.map((item) => (
+            <ProductCard product={item} key={item.Id} />
           ))}
         </div>
         <div className="flex justify-center space-x-2 mt-4">

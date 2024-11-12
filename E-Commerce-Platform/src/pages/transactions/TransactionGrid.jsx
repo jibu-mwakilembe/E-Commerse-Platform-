@@ -18,7 +18,7 @@ function TransactionGrid() {
           </div>
         </div>
         <div className="rounded-full h-12 w-12 flex items-center justify-center">
-          <img src="./src/assets/icon-blue.jpg" alt="icon" />
+          <img src="/assets/icon-blue.jpg" alt="icon" />
         </div>
       </BoxWrapper>
 
@@ -37,7 +37,7 @@ function TransactionGrid() {
           </div>
         </div>
         <div className="rounded-full h-12 w-12 flex items-center justify-center">
-          <img src="./src/assets/icon-orange.png" alt="icon-orange" />
+          <img src="/assets/icon-orange.png" alt="icon-orange" />
         </div>
       </BoxWrapper>
 
@@ -56,7 +56,7 @@ function TransactionGrid() {
           </div>
         </div>
         <div className="rounded-full h-12 w-12 flex items-center justify-center">
-          <img src="./src/assets/icon-chungwa.png" alt="icon-chungwa" />
+          <img src="/assets/icon-chungwa.png" alt="icon-chungwa" />
         </div>
       </BoxWrapper>
     </div>

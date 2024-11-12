@@ -123,12 +123,12 @@ function Sidebar() {
       <div className="flex flex-col gap-0.5  ">
         <div className="">
           <h1 className="text-base mb-2">PROFILE</h1>
-          <div className="flex gap-2 hover:bg-neutral-700 rounded-md  p-2">
+          <div className="flex gap-2 hover:bg-gray-700 rounded-md  p-2">
             <div className="h-10 w-10 rounded-full bg-gray-500 "></div>
             <div className="flex-1">
               <h1 className="text-white text-[12px]">JOHN MWAKILEMBE</h1>
               <p className="font-roboto text-[10px] text-stone-500  font-semibold ">
-                jibu@gmail.com
+                jibumwakilembe@gmail.com
               </p>
             </div>
             <div className=" flex items-center justify-center">
@@ -136,7 +136,7 @@ function Sidebar() {
             </div>
           </div>
         </div>
-        <div className=" flex  items-center justify-center hover:bg-neutral-700 rounded-md gap-2   p-2 ">
+        <div className=" flex  items-center justify-center hover:bg-gray-700 rounded-md gap-2   p-2 ">
           <CiLogin />
           <span className="">Logout</span>
         </div>

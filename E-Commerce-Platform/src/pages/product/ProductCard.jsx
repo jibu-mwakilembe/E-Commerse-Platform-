@@ -9,10 +9,16 @@ import {
   Rating,
 } from "@material-tailwind/react";
 import { CustomRatingIcon } from "./Rating";
+import { useNavigate } from "react-router-dom";
+
 function ProductCard({ product = [] }) {
+  const navigate = useNavigate();
+  const handleProductClick = (id) => {
+    navigate(`/product/${id}`);
+  };
   return (
     <div className="">
-      <Card className="w-full">
+      <Card className="w-full" onClick={() => handleProductClick(product.Id)}>
         <CardHeader shadow={false} floated={false} className="h-48">
           <img
             src={product.image}
@@ -26,7 +32,7 @@ function ProductCard({ product = [] }) {
               color="blue-gray"
               className="font-bold text-sm text-black"
             >
-              {product.name}
+              {product.name}-{product.id}
             </Typography>
           </div>
           <div className="mb-1">
