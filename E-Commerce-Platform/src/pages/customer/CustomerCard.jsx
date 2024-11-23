@@ -17,7 +17,7 @@ function CustomerCard({ customer = [] }) {
   return (
     <div>
       <Card
-        onClick={() => handleCustomerClick(customer.Id)}
+        onClick={() => handleCustomerClick(customer.id)}
         className="w-64 h-64 flex flex-col items-center "
       >
         <CardHeader floated={false} className=" h-32 w-32 rounded-full   ">

@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import InputField from "../components/shared/InputField";
 import Label from "../components/shared/Label";
 import { useNavigate } from "react-router-dom";
+import { Button, TextField } from "@mui/material";
+import PasswordField from "../components/PasswordField";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,10 +15,10 @@ const Login = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((data) => ({
+      ...data,
       [name]: value,
-    });
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -47,11 +49,13 @@ const Login = () => {
             <div className="mt-5">
               <Label htmlFor="email" text="Email" />
 
-              <InputField
+              <TextField
                 type="email"
+                fullWidth
                 placeholder="example@gmail.com"
                 id="email"
                 name="email"
+                required
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -59,20 +63,22 @@ const Login = () => {
             <div className="mt-2">
               <Label htmlFor="password" text="Password" />
 
-              <InputField
-                type="password"
+              <PasswordField
                 id="password"
+                name="password"
                 required
                 value={formData.password}
-                name="password"
                 onChange={handleChange}
               />
             </div>
 
             <div className="mt-2">
-              <button className="bg-blue-500 text-gray-900 text-sm rounded-lg  block w-full p-2.5 ">
+              <Button type="submit" variant="contained" fullWidth>
                 Login
-              </button>
+              </Button>
+              {/* <button className="bg-blue-500 text-gray-900 text-sm rounded-lg  block w-full p-2.5 ">
+                
+              </button> */}
             </div>
           </form>
         </div>

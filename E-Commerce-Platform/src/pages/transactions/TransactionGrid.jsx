@@ -2,7 +2,7 @@ import React from "react";
 import { IoBagHandle } from "react-icons/io5";
 function TransactionGrid() {
   return (
-    <div className="flex gap-4 w-full">
+    <div className=" gap-4  grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 px-4">
       <BoxWrapper>
         <div className="pl-2 flex-1  ">
           <span className="text-sm text-gray-500 text-base text-[21px]  ">
@@ -67,7 +67,7 @@ export default TransactionGrid;
 
 function BoxWrapper({ children }) {
   return (
-    <div className="bg-white rounded-md p-2 flex-1 border border-gray-200 flex items-center">
+    <div className="bg-white rounded-md p-4 w-full max-w-sm      border border-gray-200 flex items-center">
       {children}
     </div>
   );

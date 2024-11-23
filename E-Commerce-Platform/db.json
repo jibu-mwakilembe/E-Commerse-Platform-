@@ -1,0 +1,268 @@
+{
+  "customers": [
+    {
+      "id": "2",
+      "image": "/assets/deki.png",
+      "name": "Milo Jack",
+      "email": "jibumwakilembe@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "4",
+      "image": "https://docs.material-tailwind.com/img/team-3.jpg",
+      "name": "Amir Kingstone",
+      "email": "answerjibu@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "5",
+      "image": "/assets/mtu5.png",
+      "name": "Amir Kingstone",
+      "email": "amirKingstons@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "6",
+      "image": "/assets/mtu6.png",
+      "name": "Jane Kitunge",
+      "email": "amir@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "7",
+      "image": "/assets/mtu1.png",
+      "name": "Amir Kingstone",
+      "email": "amir@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "8",
+      "image": "/assets/mtu2.png",
+      "name": "Milo Jack",
+      "email": "hj@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "9",
+      "image": "/assets/mtu3.png",
+      "name": "Sam Patrick",
+      "email": "anna@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "10",
+      "image": "/assets/mtu7.png",
+      "name": "Amir Kingstone",
+      "email": "tina@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "11",
+      "image": "/assets/mtu5.png",
+      "name": "Amir Kingstone",
+      "email": "wewe@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "12",
+      "image": "https://docs.material-tailwind.com/img/team-3.jpg",
+      "name": "Jane Kitunge",
+      "email": "amir@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "image": "/assets/deki.png",
+      "name": "PlayStation 5 Gaming Console",
+      "details": "White, fairtrade certified, cotton",
+      "price": "TZS 2,220,000.12"
+    },
+    {
+      "id": "2",
+      "image": "/assets/radioplay.png",
+      "name": "Mp3 Music Player",
+      "details": "White, fairtrade certified, cotton",
+      "price": "TZS 20,000.12"
+    },
+    {
+      "id": "3",
+      "image": "/assets/ammitter.png",
+      "name": "Mini Mp3 player",
+      "details": "White, fairtrade certified, cotton",
+      "price": "TZS 15,000.12"
+    },
+    {
+      "id": "4",
+      "image": "/assets/radio.png",
+      "name": "PlayStation 5 Gaming Console",
+      "details": "White, fairtrade certified, cotton",
+      "price": "TZS 2,220,000.12"
+    },
+    {
+      "id": "5",
+      "image": "/assets/radio.png",
+      "name": "PlayStation 5 Gaming Console",
+      "details": "White, fairtrade certified, cotton",
+      "price": "TZS 2,220,000.12"
+    },
+    {
+      "id": "6",
+      "image": "/assets/radio.png",
+      "name": "PlayStation 5 Gaming Console",
+      "details": "White, fairtrade certified, cotton",
+      "price": "TZS 2,220,000.12"
+    },
+    {
+      "id": "7",
+      "image": "/assets/radio.png",
+      "name": "PlayStation 5 Gaming Console",
+      "details": "White, fairtrade certified, cotton",
+      "price": "TZS 2,220,000.12"
+    },
+    {
+      "id": "8",
+      "image": "/assets/radio.png",
+      "name": "PlayStation 5 Gaming Console",
+      "details": "White, fairtrade certified, cotton",
+      "price": "TZS 2,220,000.12"
+    },
+    {
+      "id": "9",
+      "image": "/assets/radio.png",
+      "name": "PlayStation 5 Gaming Console",
+      "details": "White, fairtrade certified, cotton",
+      "price": "TZS 2,220,000.12"
+    },
+    {
+      "id": "10",
+      "image": "/assets/ammitter.png",
+      "name": "Mini Mp3 player",
+      "details": "White, fairtrade certified, cotton",
+      "price": "TZS 15,000.12"
+    },
+    {
+      "id": "11",
+      "image": "/assets/radio.png",
+      "name": "PlayStation 5 Gaming Console",
+      "details": "White, fairtrade certified, cotton",
+      "price": "TZS 2,220,000.12"
+    },
+    {
+      "id": "12",
+      "image": "/assets/radio.png",
+      "name": "PlayStation 5 Gaming Console",
+      "details": "White, fairtrade certified, cotton",
+      "price": "TZS 2,220,000.12"
+    }
+  ],
+  "sellers": [
+    {
+      "id": "1",
+      "image": "https://docs.material-tailwind.com/img/team-3.jpg",
+      "name": "Amir Kingstone",
+      "email": "amir@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "2",
+      "image": "/assets/deki.png",
+      "name": "Milo Jack",
+      "email": "jibumwakilembe@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "3",
+      "image": "/assets/mtu3.png",
+      "name": "Sam Patrick",
+      "email": "amir@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "4",
+      "image": "https://docs.material-tailwind.com/img/team-3.jpg",
+      "name": "Amir Kingstone",
+      "email": "answerjibu@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "5",
+      "image": "/assets/mtu5.png",
+      "name": "Amir Kingstone",
+      "email": "amirKingstons@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "6",
+      "image": "/assets/mtu6.png",
+      "name": "Jane Kitunge",
+      "email": "amir@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "7",
+      "image": "/assets/mtu1.png",
+      "name": "Amir Kingstone",
+      "email": "amir@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "8",
+      "image": "/assets/mtu2.png",
+      "name": "Milo Jack",
+      "email": "hj@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "9",
+      "image": "/assets/mtu3.png",
+      "name": "Sam Patrick",
+      "email": "anna@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "10",
+      "image": "/assets/mtu7.png",
+      "name": "Amir Kingstone",
+      "email": "tina@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "11",
+      "image": "/assets/mtu5.png",
+      "name": "Amir Kingstone",
+      "email": "wewe@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    },
+    {
+      "id": "12",
+      "image": "https://docs.material-tailwind.com/img/team-3.jpg",
+      "name": "Jane Kitunge",
+      "email": "amir@gmail.com",
+      "phone": "+255 675 342 345",
+      "address": "Tanzania, Dar es Salaam, Makumbusho"
+    }
+  ]
+}

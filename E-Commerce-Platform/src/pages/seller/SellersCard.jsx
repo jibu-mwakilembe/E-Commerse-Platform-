@@ -8,21 +8,22 @@ import {
   Button,
   Rating,
 } from "@material-tailwind/react";
-import { CustomRatingIcon } from "./Rating";
+import { CustomRatingIcon } from "../product/Rating";
+
 import { useNavigate } from "react-router-dom";
 
-function ProductCard({ product = [] }) {
+function SellersCard({ seller = [] }) {
   const navigate = useNavigate();
-  const handleProductClick = (id) => {
-    navigate(`/product/${id}`);
+  const handleSellerClick = (id) => {
+    navigate(`/sellers/${id}`);
   };
   return (
     <div className="">
-      <Card className="w-full" onClick={() => handleProductClick(product.id)}>
+      <Card className="w-full" onClick={() => handleSellerClick(seller.id)}>
         <CardHeader shadow={false} floated={false} className="h-48">
           <img
-            src={product.image}
-            alt={product.name}
+            src={seller.image}
+            alt={seller.name}
             className="h-full w-full object-cover"
           />
         </CardHeader>
@@ -32,7 +33,7 @@ function ProductCard({ product = [] }) {
               color="blue-gray"
               className="font-bold text-sm text-black"
             >
-              {product.name}-{product.id}
+              {seller.name}-{seller.id}
             </Typography>
           </div>
           <div className="mb-1">
@@ -41,7 +42,7 @@ function ProductCard({ product = [] }) {
               color="gray"
               className="font-normal text-xs opacity-75"
             >
-              {product.details}
+              {seller.details}
             </Typography>
           </div>
           <Typography
@@ -54,7 +55,7 @@ function ProductCard({ product = [] }) {
           <Typography>
             <div className="place-self-end">
               <strong className="font-bold text-base text-black">
-                {product.price}
+                {seller.price}
               </strong>
             </div>
           </Typography>
@@ -64,4 +65,4 @@ function ProductCard({ product = [] }) {
   );
 }
 
-export default ProductCard;
+export default SellersCard;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import {
   Card,
   CardHeader,
@@ -10,14 +10,26 @@ import { useParams } from "react-router-dom";
 import useCustomerStore from "../../store/customerStore";
 
 function CustomerDetailsCard(props) {
-  const { getCustomerById } = useCustomerStore();
+  const { getCustomerById, selectedCustomer } = useCustomerStore();
   const { id } = useParams();
   // const customer = customerDataList.find((item) => item.Id === id);
-  const customer = getCustomerById(id);
+  const fetchCustomer = useCallback(
+    () => getCustomerById(id),
+    [id, getCustomerById]
+  );
+  useEffect(() => {
+    fetchCustomer();
+  }, [fetchCustomer]);
+
+  const customer = selectedCustomer;
+
+  if (!customer) {
+    return <p>No customer details...</p>;
+  }
 
   return (
-    <div className="flex flex-row items-center justify-center">
-      <Card className="w-full max-w-[48rem]  flex-row ">
+    <div className="flex flex-row  items-center justify-center">
+      <Card className="w-full max-w-[48rem] flex  flex-col md:flex-row  ">
         <CardHeader
           shadow={false}
           floated={false}
@@ -39,7 +51,7 @@ function CustomerDetailsCard(props) {
             </Typography>
           </div>
         </CardHeader>
-        <div className="flex flex-col items-center justify-center">
+        <div className="hidden md:block">
           <div className="h-48 w-px bg-gray-300 mx-4 my-4 "></div>
         </div>
 

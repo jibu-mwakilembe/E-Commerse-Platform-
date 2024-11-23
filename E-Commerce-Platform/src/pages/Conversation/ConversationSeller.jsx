@@ -37,7 +37,7 @@ function ConversationSeller(props) {
     <div>
       <div className="flex flex-col gap-3">
         <HeaderTitle title="Sellers" />
-        <div className="flex gap-3  ">
+        <div className=" gap-3 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 ">
           <div className=" flex flex-col gap-3">
             <ConversationGrid
               allValue="345"

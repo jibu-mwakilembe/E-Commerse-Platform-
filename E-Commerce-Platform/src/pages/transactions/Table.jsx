@@ -21,14 +21,14 @@ const dataTable = [
 
   {
     Date: "Jan 25, 2023",
-    ID: "45635",
+    ID: "4563578",
     Value: "TZS 120,000",
     Status: "Available",
     Description: "Some short description",
   },
   {
     Date: "Jan 25, 2023",
-    ID: "45635",
+    ID: "456",
     Value: "TZS 120,000",
     Status: "Available",
     Description: "Some short description",
@@ -40,21 +40,23 @@ function Table(props) {
     <div className="divide-y devide-gray-200">
       <table className="min-w-full divide-y devide-gray-200 border-t border-gray-300">
         <thead>
-          <td className="px-6 py-4 whitespace-nowrap text-base text-gray-900">
-            DATE
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-base text-gray-900">
-            ID
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-base text-gray-900">
-            Value
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-base text-gray-900">
-            Status
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-base text-gray-900">
-            Description
-          </td>
+          <tr>
+            <th className="px-6 py-4 whitespace-nowrap text-base text-gray-900">
+              DATE
+            </th>
+            <th className="px-6 py-4 whitespace-nowrap text-base text-gray-900">
+              ID
+            </th>
+            <th className="px-6 py-4 whitespace-nowrap text-base text-gray-900">
+              Value
+            </th>
+            <th className="px-6 py-4 whitespace-nowrap text-base text-gray-900">
+              Status
+            </th>
+            <th className="px-6 py-4 whitespace-nowrap text-base text-gray-900">
+              Description
+            </th>
+          </tr>
         </thead>
         <tbody className="divide-y devide-gray-200   ">
           {dataTable.map((data) => (

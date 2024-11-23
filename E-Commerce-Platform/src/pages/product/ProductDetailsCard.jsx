@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Card,
   CardHeader,
@@ -10,14 +10,17 @@ import {
 import { CustomRatingIcon } from "./Rating";
 import TopHeader from "../../components/shared/TopHeader";
 import { useParams } from "react-router-dom";
-import { productDataList } from "../../store/ProductData";
 import useProductStore from "../../store/productStore";
 
 function ProductDetailsCard(props) {
   const { id } = useParams();
-  const { getProductById } = useProductStore();
+  const { selectedProduct, getProductById } = useProductStore();
   // const product = productDataList.find((item) => item.Id === id);
-  const product = getProductById(id);
+  useEffect(() => {
+    getProductById(id);
+  }, [id, getProductById]);
+
+  const product = selectedProduct;
 
   if (!product) {
     return <p>Product not found</p>;

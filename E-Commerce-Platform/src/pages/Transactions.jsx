@@ -12,9 +12,11 @@ function Transactions() {
       <div className="">
         <TopHeader topHead="Transactions Overview" />
       </div>
+      <div className="">
+        <TransactionGrid />
+      </div>
 
-      <TransactionGrid />
-      <div className="flex flex-row w-full gap-4 mt-3">
+      <div className="flex flex-wrap  lg:flex-row md:flex-col sm:flex-col w-full gap-4 mt-3">
         <TransactionChart />
         <TransactionProgress />
       </div>

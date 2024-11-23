@@ -1,17 +1,52 @@
 import { create } from "zustand";
-import { productDataList } from "./ProductData";
+import productService from "../services/ProductService";
 
-const useProductStore = create((set) => ({
-  productLists: productDataList,
-  getProducts: () => {
+const useProductstore = create((set) => ({
+  productList: [],
+  filteredProducts: [],
+  purchasedProduct: [],
+  isLoading: false,
+  error: null,
+  selectedProduct: null,
+  searchQuery: "",
+
+  fetchProduct: async () => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await productService.getProducts();
+      set({
+        productList: response.data,
+        filteredProducts: response.data,
+        isLoading: false,
+      });
+    } catch (error) {
+      set({ error: "Failed to fethc product", isLoading: false });
+    }
+  },
+
+  getProductById: (id) => {
     set((state) => ({
-      productLists: state.productLists,
+      selectedProduct:
+        state.productList.find((product) => product.id === id) || null,
     }));
   },
-  getProductById: (id) => {
-    const product = productDataList.find((prod) => prod.Id === id);
-    return product || null;
+
+  searchProduct: (query) => {
+    set((state) => {
+      const filteredProducts = query
+        ? state.productList.filter((product) =>
+            product.name.toLowerCase().includes(query.toLowerCase())
+          )
+        : state.productList;
+      return { searchQuery: query, filteredProducts: filteredProducts };
+    });
+  },
+  setPurchasedProduct: () => {
+    set((state) => {
+      const purchasedProduct = state.productList.slice(1, 3);
+      return { purchasedProduct: purchasedProduct };
+    });
   },
 }));
 
-export default useProductStore;
+export default useProductstore;

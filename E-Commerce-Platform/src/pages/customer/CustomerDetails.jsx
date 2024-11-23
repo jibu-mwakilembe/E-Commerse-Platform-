@@ -19,13 +19,15 @@ function CustomerDetails(props) {
         <CustomerDetailsCard />
       </div>
       <div className="px-4 mt-4 ">
-        <div className="p-1 w-full border border-gray-200 px-3 rounded-lg">
-          <nav className="flex gap-7 text-gray-500 px-4">
+        <div className=" w-full border border-gray-200 px-3 rounded-lg">
+          <nav className="flex gap-7 text-gray-500 px-4 ">
             <Link
               to={`/customer/${id}/purchases`}
               onClick={() => handleLink("purchases")}
               className={` ${
-                activeLink === "purchases" ? "border-b-4 border-blue-500" : ""
+                activeLink === "purchases"
+                  ? "border-b-4 w-24 border-blue-500 flex justify-center items-center py-2"
+                  : "py-2"
               } `}
             >
               Purchases
@@ -34,7 +36,9 @@ function CustomerDetails(props) {
               to={`/customer/${id}/comments`}
               onClick={() => handleLink("comments")}
               className={` ${
-                activeLink === "comments" ? "border-b-4 border-blue-500" : ""
+                activeLink === "comments"
+                  ? "border-b-4 w-24  border-blue-500 flex justify-center items-center  py-2"
+                  : "py-2"
               } `}
             >
               Comments
@@ -43,7 +47,9 @@ function CustomerDetails(props) {
               to={`/customer/${id}/security`}
               onClick={() => handleLink("security")}
               className={` ${
-                activeLink === "security" ? "border-b-4 border-blue-500" : ""
+                activeLink === "security"
+                  ? "border-b-4 w-24 flex justify-center items-center  border-blue-500 py-2  "
+                  : "py-2"
               } `}
             >
               Security
@@ -51,9 +57,7 @@ function CustomerDetails(props) {
           </nav>
         </div>
         <div className="">{<Outlet />}</div>
-        tab
       </div>
-      customer details
     </div>
   );
 }
