@@ -19,15 +19,18 @@ function SellersCard({ seller = [] }) {
   };
   return (
     <div className="">
-      <Card className="w-full" onClick={() => handleSellerClick(seller.id)}>
-        <CardHeader shadow={false} floated={false} className="h-48">
+      <Card
+        className="w-full flex flex-col items-center "
+        onClick={() => handleSellerClick(seller.id)}
+      >
+        <CardHeader shadow={false} floated={false} className="h-32 w-32">
           <img
             src={seller.image}
             alt={seller.name}
             className="h-full w-full object-cover"
           />
         </CardHeader>
-        <CardBody>
+        <CardBody className="text-center">
           <div className="mb-1 ">
             <Typography
               color="blue-gray"
@@ -45,13 +48,16 @@ function SellersCard({ seller = [] }) {
               {seller.details}
             </Typography>
           </div>
-          <Typography
+          {/* <Typography
             variant="small"
             color="gray"
             className="font-normal opacity-75"
           >
             <CustomRatingIcon />
-          </Typography>
+          </Typography> */}
+          <div className="font-normal opacity-0.75 text-gray-500 text-sm">
+            <CustomRatingIcon />
+          </div>
           <Typography>
             <div className="place-self-end">
               <strong className="font-bold text-base text-black">

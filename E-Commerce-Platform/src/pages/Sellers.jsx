@@ -6,13 +6,20 @@ import Pagination from "@mui/material/Pagination";
 import SellersCard from "./seller/SellersCard";
 
 function Sellers() {
-  const { sellerList, fetchSellers, error, isLoading } = useSellerStore();
+  const {
+    sellerList,
+    filtedSellers,
+    searchSeller,
+    fetchSellers,
+    error,
+    isLoading,
+  } = useSellerStore();
 
   useEffect(() => {
     fetchSellers();
   }, [fetchSellers]);
 
-  const sellersData = sellerList;
+  const sellersData = filtedSellers;
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemPerPage = 10;
@@ -28,7 +35,9 @@ function Sellers() {
     setCurrentPage(page);
   };
   const handleSearch = (e) => {
+    const query = e.target.value;
     setCurrentPage(1);
+    searchSeller(query);
   };
 
   if (isLoading) {

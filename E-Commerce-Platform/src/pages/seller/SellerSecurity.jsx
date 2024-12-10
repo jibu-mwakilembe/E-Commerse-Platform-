@@ -1,28 +1,24 @@
 import React, { useEffect, useCallback } from "react";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import useCustomerStore from "../../store/customerStore";
 import { useNavigate, useParams } from "react-router-dom";
+import useSellerStore from "../../store/SellerStore";
 
-function Security(props) {
-  const { deleteCustomer, getCustomerById, selectedCustomer } =
-    useCustomerStore();
+function SellerSecurity(props) {
+  const { deleteSeller, getSellerById, selectedSeller } = useSellerStore();
   const { id } = useParams();
   const navigate = useNavigate();
-  const fetchCustomer = useCallback(
-    () => getCustomerById(id),
-    [id, getCustomerById]
-  );
+  const fetchSeller = useCallback(() => getSellerById(id), [id, getSellerById]);
 
   useEffect(() => {
-    fetchCustomer();
-  }, [fetchCustomer]);
+    fetchSeller();
+  }, [fetchSeller]);
 
-  const customer = selectedCustomer;
+  const seller = selectedSeller;
 
   const handleDelate = () => {
-    console.log("Delete customer with id:", id);
-    deleteCustomer(id);
-    navigate("/customers");
+    console.log("Delete Seller with id:", id);
+    deleteSeller(id);
+    navigate("/sellers");
   };
   return (
     <div className="flex flex-col p-3 ">
@@ -31,10 +27,10 @@ function Security(props) {
         onClick={handleDelate}
       >
         <div className="flex-1">
-          <h1 className="text-xl">Delete Customer</h1>
+          <h1 className="text-xl">Delete Seller</h1>
           <p className="text-xs">
-            You are about to delete {customer.name}. Note that this action is
-            not reversible.
+            You are about to delete {seller.name}. Note that this action is not
+            reversible.
           </p>
         </div>
         <NavigateNextIcon />
@@ -43,4 +39,4 @@ function Security(props) {
   );
 }
 
-export default Security;
+export default SellerSecurity;

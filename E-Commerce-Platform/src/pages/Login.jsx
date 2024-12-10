@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
-import InputField from "../components/shared/InputField";
 import Label from "../components/shared/Label";
 import { useNavigate } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
 import PasswordField from "../components/PasswordField";
+import authService from "../services/authService";
+import useAuthStore from "../store/authStore";
+import useSignIn from "react-auth-kit/hooks/useSignIn";
+import axios from "axios";
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Login = () => {
   const navigate = useNavigate();
+  const signIn = useSignIn();
+  const { setUser } = useAuthStore();
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -21,11 +29,41 @@ const Login = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+
+    try {
+      const user = await authService.login(formData.email, formData.password);
+      console.log("user obk=ject:", user.authUserState);
+
+      const success = signIn({
+        auth: {
+          token: user.token,
+          type: "Bearer",
+        },
+
+        // userState: user.authUserState,
+        userState: {
+          name: "The Dev",
+          uuid: "fff-fff-ffff",
+        },
+
+        refresh: user.refreshToken,
+      });
+
+      if (success) {
+        setUser(user, user.token);
+        navigate("/");
+      } else {
+        setError("Login Failed. Please try again");
+      }
+    } catch (error) {
+      console.log(error);
+      setError(error.message || "Failed to login");
+    }
 
     console.log("form submitted", formData);
-    navigate("/");
   };
 
   return (
@@ -46,6 +84,7 @@ const Login = () => {
             <p className="font-roboto text-[10px] text-stone-500  font-semibold ">
               Please enter your email and password to sign into the system.
             </p>
+            {error && <p className="text-red-500 mt-5 ">{error}</p>}
             <div className="mt-5">
               <Label htmlFor="email" text="Email" />
 
@@ -72,7 +111,7 @@ const Login = () => {
               />
             </div>
 
-            <div className="mt-2">
+            <div className="mt-5">
               <Button type="submit" variant="contained" fullWidth>
                 Login
               </Button>

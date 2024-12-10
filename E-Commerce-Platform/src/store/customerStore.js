@@ -7,11 +7,14 @@ const useCustomerStore = create(
     persist(
       (set) => ({
         customerList: [],
-        filterCustomers: [],
+        // filterCustomers: [],
+        selectedComment: [],
+        filterComment: [],
         isLoading: false,
         error: null,
         selectedCustomer: null,
         searchQuery: "",
+        // searchComment: "",
 
         fetchCustomers: async () => {
           set({ isLoading: true, error: null });
@@ -27,6 +30,26 @@ const useCustomerStore = create(
             set({ error: "Failed to fetch customers", isLoading: false });
           }
         },
+
+        fetchCommentById: async (id) => {
+          set({ isLoading: true, error: null });
+          try {
+            const response = await customerService.getCommentById(id);
+            set({ selectedComment: response.data, isLoading: false });
+          } catch (error) {
+            set({ error: "Failed to fetch comment", isLoading: false });
+          }
+        },
+
+        // fetchComment: async () => {
+        //   set({ isLoading: true, error: null });
+        //   try {
+        //     const response = await customerService.getComment();
+        //     set({ selectedComment: response.data, isLoading: false });
+        //   } catch (error) {
+        //     set({ error: "Failed to load comments", isLoading: false });
+        //   }
+        // },
 
         getCustomerById: (id) => {
           set((state) => ({
@@ -47,6 +70,15 @@ const useCustomerStore = create(
             return { searchQuery: query, filterCustomers: filterCustomers };
           });
         },
+
+        // setCommentQuery: (query) => {
+        //   set((state) => {
+        //     const filterComment = state.selectedComment.find(
+        //       (comment) => comment.id === query
+        //     );
+        //     return { searchComment: query, filterComment: filterComment };
+        //   });
+        // },
 
         deleteCustomer: async (id) => {
           try {

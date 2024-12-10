@@ -9,15 +9,16 @@ import {
 } from "@material-tailwind/react";
 import { Button } from "@mui/material";
 
-function CustomerComment(props) {
+function CustomerComment({ image, name, comment }) {
   return (
     <div>
       <div className="flex gap-3">
-        <Card className="w-full flex-row">
-          <CardHeader shadow={false} floated={false} className="h-16 w-16">
+        <Card className="w-full flex flex-wrap lg:flex-row md:flex-cols">
+          <CardHeader shadow={false} floated={false} className="h-16 w-16 ">
             <img
-              src="https://docs.material-tailwind.com/img/team-3.jpg"
-              alt="user name"
+              // src="https://docs.material-tailwind.com/img/team-3.jpg"
+              src={image}
+              alt={name}
               className="h-full w-full object-cover rounded-full"
             />
           </CardHeader>
@@ -27,7 +28,7 @@ function CustomerComment(props) {
                 color="blue-gray"
                 className="font-bold text-sm text-black"
               >
-                Amir Kingstone
+                {name}
               </Typography>
             </div>
             <div className="mb-1">
@@ -45,12 +46,10 @@ function CustomerComment(props) {
                 color="black"
                 className="mt-3 font-normal"
               >
-                In publishing and graphic design, Lorem ipsum is a placeholder
-                text commonly used to demonstrate the visual form of a document
-                or a typeface
+                {comment}
               </Typography>
             </div>
-            <div className=" flex gap-4 mt-4">
+            <div className=" flex flex-wrap md:flex-cols lg:flex-row gap-4 mt-4">
               <div className="">
                 <Button variant="outlined" sx={{ borderRadius: "20px" }}>
                   Repray

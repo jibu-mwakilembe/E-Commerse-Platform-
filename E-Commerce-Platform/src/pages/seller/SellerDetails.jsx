@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import BackButton from "../../components/BackButton";
-import CustomerDetailsCard from "./CustomerDetailsCard";
 import { Link, Outlet, useParams } from "react-router-dom";
+import SellersCardDetails from "./SellersCardDetails";
 
-function CustomerDetails(props) {
+function SellerDetails(props) {
   const [activeLink, setActiveLink] = useState(null);
   const { id } = useParams();
 
@@ -13,27 +13,27 @@ function CustomerDetails(props) {
   return (
     <div className="p-3 flex   flex-col gap-3">
       <div className="">
-        <BackButton backTitle="Back to Customers" backLink="/customers" />
+        <BackButton backTitle="Back to Sellers" backLink="/sellers" />
       </div>
       <div className="">
-        <CustomerDetailsCard />
+        <SellersCardDetails />
       </div>
       <div className="px-4 mt-4 ">
         <div className=" w-full border border-gray-200 px-3 rounded-lg">
           <nav className="flex gap-7 text-black px-4 ">
             <Link
-              to={`/customer/${id}/purchases`}
-              onClick={() => handleLink("purchases")}
+              to={`/sellers/${id}/products`}
+              onClick={() => handleLink("products")}
               className={` ${
-                activeLink === "purchases"
+                activeLink === "products"
                   ? "border-b-4 w-24 border-blue-500 flex justify-center items-center py-2"
                   : "py-2"
               } `}
             >
-              Purchases
+              Products
             </Link>
             <Link
-              to={`/customer/${id}/comments`}
+              to={`/sellers/${id}/sellersactivity`}
               onClick={() => handleLink("comments")}
               className={` ${
                 activeLink === "comments"
@@ -41,10 +41,10 @@ function CustomerDetails(props) {
                   : "py-2"
               } `}
             >
-              Comments
+              Sale activity
             </Link>
             <Link
-              to={`/customer/${id}/security`}
+              to={`/sellers/${id}/security`}
               onClick={() => handleLink("security")}
               className={` ${
                 activeLink === "security"
@@ -62,4 +62,4 @@ function CustomerDetails(props) {
   );
 }
 
-export default CustomerDetails;
+export default SellerDetails;

@@ -3,17 +3,17 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 function RatedIcon() {
   return (
-    <div className="">
+    <span className="">
       <AiFillStar />
-    </div>
+    </span>
   );
 }
 
 function UnratedIcon() {
   return (
-    <div className="">
+    <span className="">
       <AiOutlineStar />
-    </div>
+    </span>
   );
 }
 

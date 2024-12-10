@@ -5,9 +5,9 @@ const useProductstore = create((set) => ({
   productList: [],
   filteredProducts: [],
   purchasedProduct: [],
+  sellerProducts: [],
   isLoading: false,
   error: null,
-  selectedProduct: null,
   searchQuery: "",
 
   fetchProduct: async () => {
@@ -41,10 +41,54 @@ const useProductstore = create((set) => ({
       return { searchQuery: query, filteredProducts: filteredProducts };
     });
   },
-  setPurchasedProduct: () => {
+
+  fetchPurchasedProduct: async (id) => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await productService.getProductById(id);
+      set({
+        purchasedProduct: response.data,
+        filteredProducts: response.data,
+        isLoading: false,
+      });
+    } catch (error) {
+      set({ error: "Failed to search purchased product", isLoading: false });
+    }
+  },
+
+  searchPurchasedProduct: (query) => {
     set((state) => {
-      const purchasedProduct = state.productList.slice(1, 3);
-      return { purchasedProduct: purchasedProduct };
+      const filteredProducts = query
+        ? state.purchasedProduct.filter((product) =>
+            product.name.toLowerCase().includes(query.toLowerCase())
+          )
+        : state.purchasedProduct;
+      return { searchQuery: query, filteredProducts: filteredProducts };
+    });
+  },
+
+  fetchSellerProduct: async (id) => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await productService.getSellerProductById(id);
+      set({
+        sellerProducts: response.data,
+        filteredProducts: response.data,
+        isLoading: false,
+      });
+    } catch (error) {
+      set({ error: "Failed to search seller products", isLoading: false });
+    }
+  },
+
+  searchSellerProduct: (query) => {
+    set((state) => {
+      const filteredProducts = query
+        ? state.sellerProducts.filter((product) =>
+            product.name.toLowerCase().includes(query.toLowerCase())
+          )
+        : state.sellerProducts;
+      return { searchQuery: query, filteredProducts: filteredProducts };
     });
   },
 }));
