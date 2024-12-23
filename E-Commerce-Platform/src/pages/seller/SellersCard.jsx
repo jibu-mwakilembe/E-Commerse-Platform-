@@ -23,7 +23,11 @@ function SellersCard({ seller = [] }) {
         className="w-full flex flex-col items-center "
         onClick={() => handleSellerClick(seller.id)}
       >
-        <CardHeader shadow={false} floated={false} className="h-32 w-32">
+        <CardHeader
+          shadow={false}
+          floated={false}
+          className="h-32 w-32 rounded-full"
+        >
           <img
             src={seller.image}
             alt={seller.name}

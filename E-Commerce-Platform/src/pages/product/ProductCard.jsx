@@ -19,11 +19,15 @@ function ProductCard({ product = [] }) {
   return (
     <div className="">
       <Card className="w-full" onClick={() => handleProductClick(product.id)}>
-        <CardHeader shadow={false} floated={false} className="h-48">
+        <CardHeader
+          shadow={false}
+          floated={false}
+          className="h-48 rounded-full"
+        >
           <img
             src={product.image}
             alt={product.name}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover "
           />
         </CardHeader>
         <CardBody>

@@ -20,7 +20,7 @@ function CustomerCard({ customer = [] }) {
         onClick={() => handleCustomerClick(customer.id)}
         className="w-64 h-64 flex flex-col items-center "
       >
-        <CardHeader floated={false} className=" h-32 w-32 rounded-full   ">
+        <CardHeader floated={false} className=" h-32 w-32 rounded-full">
           <img
             src={customer.image}
             alt="profile-picture"
