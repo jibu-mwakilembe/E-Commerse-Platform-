@@ -15,7 +15,7 @@ const dataTable = [
 function ConversationRentation(props) {
   return (
     <div>
-      <div className="bg-white rounded-md p-3  w-1/4  border border-gray-200 flex flex-col gap-2 ">
+      <div className="bg-white rounded-md p-3 overflow-x-auto  lg:w-1/2 md:w-full sm:w-full  border border-gray-200 flex flex-col gap-2 ">
         <h1 className="text-base text-black font-bold">Retention rate</h1>
         <div className=" mb-2">
           <table className="min-w-full">
@@ -25,7 +25,10 @@ function ConversationRentation(props) {
             </thead>
             <tbody className="divide-y devide-gray-200">
               {dataTable.map((data, index) => (
-                <tr key={index} className="text-base text-black font-bold">
+                <tr
+                  key={index}
+                  className="text-base text-black font-bold odd:bg-gray-50 even:bg-white"
+                >
                   <td className="px-3 py-1  whitespace-nowrap text-sm text-black">
                     {data.year}
                   </td>

@@ -15,14 +15,14 @@ function TransactionTable() {
     <div className="flex   w-full   flex-col gap-3 mb-3">
       <HeaderTitle title="Transactions" />
       <div className="w-full  bg-white rounded-md  border border-gray-200  items-center p-4 ">
-        <div className="flex gap-3  sm:flex-col md:flex-col w-full lg:flex-row sm:w-auto md:w-auto ">
+        <div className="flex flex-wrap gap-3 p-3 sm:flex-col md:flex-col lg:flex-row ">
           <div className="flex-1 bg-white">
             <SearchTextField
               placeholder="Search for transactions"
               onChange={handleSearch}
             />
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-3 justify-between   w-full  sm:w-auto md:w-auto">
             <MenuDefault item_type="Electronic" items={electronic} />
             <MenuDefault item_type="Last 30 days" items={last} />
           </div>

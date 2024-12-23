@@ -37,7 +37,7 @@ const dataTable = [
 
 function Table(props) {
   return (
-    <div className="divide-y devide-gray-200">
+    <div className="overflow-x-auto">
       <table className="min-w-full divide-y devide-gray-200 border-t border-gray-300">
         <thead>
           <tr>
@@ -60,7 +60,7 @@ function Table(props) {
         </thead>
         <tbody className="divide-y devide-gray-200   ">
           {dataTable.map((data) => (
-            <tr key={data.ID} className="hover:bg-gray-500  ">
+            <tr key={data.ID} className=" odd:bg-gray-50 even:bg-white  ">
               <td className="px-6 py-2 whitespace-nowrap text-sm text-black">
                 {data.Date}
               </td>

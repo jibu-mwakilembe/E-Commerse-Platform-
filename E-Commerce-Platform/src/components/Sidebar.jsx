@@ -48,7 +48,7 @@ function Sidebar() {
   return (
     <div className="flex h-screen">
       <button
-        className="absolute top-4 left-2 z-20 bg-blue-600 text-white p-2 rounded-md"
+        className="absolute top-2 left-2 z-20 bg-blue-600 text-white p-2 rounded-md"
         onClick={toggleSidebar}
       >
         {isSidebarOpen ? (

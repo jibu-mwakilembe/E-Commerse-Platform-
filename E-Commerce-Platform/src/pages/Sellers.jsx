@@ -49,7 +49,7 @@ function Sellers() {
   }
 
   return (
-    <div className="py-3 px-14  flex-col gap-3">
+    <div className="px-3 py-12  flex-col gap-3">
       <div className="">
         <TopHeader topHead="Sellers" />
       </div>
