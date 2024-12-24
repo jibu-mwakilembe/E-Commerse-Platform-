@@ -19,11 +19,7 @@ function ProductCard({ product = [] }) {
   return (
     <div className="">
       <Card className="w-full" onClick={() => handleProductClick(product.id)}>
-        <CardHeader
-          shadow={false}
-          floated={false}
-          className="h-48 rounded-full"
-        >
+        <CardHeader shadow={false} floated={false} className="h-48 rounded-md">
           <img
             src={product.image}
             alt={product.name}
@@ -36,7 +32,7 @@ function ProductCard({ product = [] }) {
               color="blue-gray"
               className="font-bold text-sm text-black"
             >
-              {product.name}-{product.id}
+              {product.name}
             </Typography>
           </div>
           <div className="mb-1">

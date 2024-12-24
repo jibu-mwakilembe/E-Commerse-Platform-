@@ -4,7 +4,7 @@ import ProductDetailsCard from "./product/ProductDetailsCard";
 
 function ProductDetails(props) {
   return (
-    <div className="p-3 flex   flex-col gap-3">
+    <div className="px-3 py-12 flex   flex-col gap-3">
       <BackButton backTitle="Back to Products" backLink="/product" />
       <div className="w-full">
         <ProductDetailsCard />

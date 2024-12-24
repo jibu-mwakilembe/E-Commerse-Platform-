@@ -11,7 +11,7 @@ function CustomerDetails(props) {
     setActiveLink(link);
   };
   return (
-    <div className="p-3 flex   flex-col gap-3">
+    <div className="px-3 py-12 flex   flex-col gap-3">
       <div className="">
         <BackButton backTitle="Back to Customers" backLink="/customers" />
       </div>
