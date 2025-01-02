@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 function CustomerCard({ customer = [] }) {
   const navigate = useNavigate();
   const handleCustomerClick = (id) => {
-    navigate(`/customer/${id}`);
+    navigate(`/customers/${id}`);
   };
   return (
     <div>

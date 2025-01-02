@@ -22,7 +22,7 @@ function CustomerDetails(props) {
         <div className=" w-full border border-gray-200 px-3 rounded-lg">
           <nav className="flex gap-7 text-black px-4 ">
             <Link
-              to={`/customer/${id}/purchases`}
+              to={`/customers/${id}/purchases`}
               onClick={() => handleLink("purchases")}
               className={` ${
                 activeLink === "purchases"
@@ -33,7 +33,7 @@ function CustomerDetails(props) {
               Purchases
             </Link>
             <Link
-              to={`/customer/${id}/comments`}
+              to={`/customers/${id}/comments`}
               onClick={() => handleLink("comments")}
               className={` ${
                 activeLink === "comments"
@@ -44,7 +44,7 @@ function CustomerDetails(props) {
               Comments
             </Link>
             <Link
-              to={`/customer/${id}/security`}
+              to={`/customers/${id}/security`}
               onClick={() => handleLink("security")}
               className={` ${
                 activeLink === "security"

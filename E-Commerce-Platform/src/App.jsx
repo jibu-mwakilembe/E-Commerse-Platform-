@@ -26,6 +26,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Transactions />} />
             <Route path="/product" element={<Products />} />
+            <Route path="/customers" element={<Customers />} />
             <Route path="/sellers" element={<Sellers />} />
             <Route path="/sellers/:id" element={<SellerDetails />}>
               <Route
@@ -41,13 +42,13 @@ function App() {
                 element={<SellerProducts />}
               />
             </Route>
-            <Route path="/customers" element={<Customers />} />
             <Route path="/conversation" element={<Conversations />} />
             <Route path="/product/:id" element={<ProductDetails />} />
-            <Route path="/customer/:id" element={<CustomerDetails />}>
-              <Route path="/customer/:id/purchases" element={<Purchases />} />
-              <Route path="/customer/:id/comments" element={<Comment />} />
-              <Route path="/customer/:id/security" element={<Security />} />
+            <Route path="/customers" element={<Customers />} />
+            <Route path="/customers/:id" element={<CustomerDetails />}>
+              <Route path="/customers/:id/purchases " element={<Purchases />} />
+              <Route path="/customers/:id/comments" element={<Comment />} />
+              <Route path="/customers/:id/security" element={<Security />} />
             </Route>
           </Route>
         </Routes>

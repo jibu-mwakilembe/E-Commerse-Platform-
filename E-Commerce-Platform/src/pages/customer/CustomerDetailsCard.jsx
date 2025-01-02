@@ -24,7 +24,7 @@ function CustomerDetailsCard(props) {
   const customer = selectedCustomer;
 
   if (!customer) {
-    return <p>No customer details...</p>;
+    return <p className="px-3 py-12">No customer details...</p>;
   }
 
   return (

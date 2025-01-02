@@ -43,11 +43,11 @@ function Customers() {
   };
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="px-3 py-12">Loading...</p>;
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return <p className="px-3 py-12">{error}</p>;
   }
   return (
     <div className="px-3 py-12 flex  flex-col gap-3">

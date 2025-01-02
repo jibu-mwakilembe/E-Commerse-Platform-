@@ -41,11 +41,11 @@ function Sellers() {
   };
 
   if (isLoading) {
-    return <p>loading...</p>;
+    return <p className="px-3 py-12">loading...</p>;
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return <p className="px-3 py-12">{error}</p>;
   }
 
   return (

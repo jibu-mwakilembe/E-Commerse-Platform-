@@ -23,7 +23,7 @@ function ProductDetailsCard(props) {
   const product = selectedProduct;
 
   if (!product) {
-    return <p>Product not found</p>;
+    return <p className="px-3 py-12">Product not found</p>;
   }
 
   return (
