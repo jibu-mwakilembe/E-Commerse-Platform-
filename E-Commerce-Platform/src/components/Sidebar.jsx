@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import classNames from "classnames";
 import Header from "./Header";
@@ -28,6 +28,7 @@ function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const authUser = useAuthUser();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const sidebarRef = useRef(null);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -42,11 +43,35 @@ function Sidebar() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const closeSidebar = () => setIsSidebarOpen(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        closeSidebar();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        closeSidebar();
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const classLink =
     "flex items-center gap-2 font-light px-3 py-2  hover:no-underline  rounded-md text-base transition-all";
 
   return (
-    <div className="flex h-screen">
+    <div className="relative">
       <button
         className="absolute top-2 left-2 z-20 bg-blue-600 text-white p-2 rounded-md"
         onClick={toggleSidebar}
@@ -59,7 +84,10 @@ function Sidebar() {
       </button>
 
       {isSidebarOpen && (
-        <div className="flex flex-col w-65 p-1 bg-[#1B1C1E] text-white h-screen overflow-y-auto">
+        <div
+          ref={sidebarRef}
+          className="flex flex-col w-65 p-1 bg-[#1B1C1E] text-white h-screen overflow-y-auto"
+        >
           <div className="flex items-center gap-2 px-14 py-3">
             <Header />
           </div>

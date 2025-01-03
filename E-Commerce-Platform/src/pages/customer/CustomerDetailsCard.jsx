@@ -33,7 +33,7 @@ function CustomerDetailsCard(props) {
         <CardHeader
           shadow={false}
           floated={false}
-          className="m-0 w-2/5 shrink-0 rounded-r-none flex flex-col items-center justify-center"
+          className="m-0 lg:w-2/5 sm:w-full md:w-full shrink-0 rounded-r-none flex flex-col items-center justify-center"
         >
           <div className="h-32 w-32 rounded-full  ">
             <img

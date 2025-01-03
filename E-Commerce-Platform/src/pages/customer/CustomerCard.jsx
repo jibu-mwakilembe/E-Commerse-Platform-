@@ -29,10 +29,10 @@ function CustomerCard({ customer = [] }) {
         </CardHeader>
         <CardBody className="text-center">
           <Typography variant="h4" color="blue-gray" className="mb-2">
-            {customer.name}
+            {customer.name || "Unknown customer"}
           </Typography>
           <Typography color="blue-gray" className="font-medium" textGradient>
-            {customer.email}
+            {customer.email || "Unknown email"}
           </Typography>
         </CardBody>
       </Card>

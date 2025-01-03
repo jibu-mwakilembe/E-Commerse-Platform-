@@ -29,11 +29,11 @@ function ProductDetailsCard(props) {
   return (
     <div>
       <Card className="w-full px-4 py-2  ">
-        <div className="flex">
+        <div className="flex flex-wrap gap-3 p-3 sm:flex-col md:flex-col lg:flex-row">
           <CardHeader
             shadow={false}
             floated={false}
-            className="m-0 w-2/4 h-96 shrink-0 rounded-r-none rounded-lg"
+            className="m-0 lg:w-2/4 md:w-full sm:w-full h-96 shrink-0 rounded-r-none rounded-lg"
           >
             <img
               src={product.image}

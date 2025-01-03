@@ -56,7 +56,7 @@ function Purchases(props) {
   };
 
   const customer = selectedCustomer;
-  const product = filteredProducts;
+  const product = filteredProducts || [];
   console.log("customer:", customer);
   return (
     <div className="">

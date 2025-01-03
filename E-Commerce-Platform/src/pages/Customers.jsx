@@ -22,7 +22,7 @@ function Customers() {
     fetchCustomers();
   }, [fetchCustomers]);
 
-  const customerData = filterCustomers;
+  const customerData = filterCustomers || [];
   const [currentPage, setCurrentPage] = useState(1);
   const itemPerPage = 10;
 
