@@ -16,6 +16,7 @@ import SellerSecurity from "./pages/seller/SellerSecurity";
 import SellersActivity from "./pages/seller/SellersActivity";
 import RequireAuth from "@auth-kit/react-router/RequireAuth";
 import SellerProducts from "./pages/seller/SellersProducts";
+import ProtectedRoute from "./components/ProtectedRout";
 
 function App() {
   return (
@@ -23,11 +24,32 @@ function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Layout />}>
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <Layout />
+              </ProtectedRoute>
+            }
+          >
             <Route index element={<Transactions />} />
             <Route path="/product" element={<Products />} />
-            <Route path="/customers" element={<Customers />} />
-            <Route path="/sellers" element={<Sellers />} />
+            <Route
+              path="/customers"
+              element={
+                <ProtectedRoute allowedRoles={["customers"]}>
+                  <Customers />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/sellers"
+              element={
+                <ProtectedRoute allowedRoles={["seller"]}>
+                  <Sellers />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/sellers/:id" element={<SellerDetails />}>
               <Route
                 path="/sellers/:id/security"

@@ -1,19 +1,17 @@
 import axios from "axios";
+
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const login = async (email, password) => {
-  const response = await axios.get(`${API_BASE_URL}/login`, {
-    params: {
+  try {
+    const response = await axios.post(`${API_BASE_URL}/login`, {
       email,
       password,
-    },
-  });
-
-  if (response.data.length > 0) {
-    return response.data[0];
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(error?.response?.message || "Login failed");
   }
-
-  throw new Error("Invalid password or email");
 };
 
 export default { login };

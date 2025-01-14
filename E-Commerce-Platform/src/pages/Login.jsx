@@ -6,14 +6,9 @@ import { Button, TextField } from "@mui/material";
 import PasswordField from "../components/PasswordField";
 import authService from "../services/authService";
 import useAuthStore from "../store/authStore";
-import useSignIn from "react-auth-kit/hooks/useSignIn";
-import axios from "axios";
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Login = () => {
   const navigate = useNavigate();
-  const signIn = useSignIn();
   const { setUser } = useAuthStore();
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
@@ -34,36 +29,26 @@ const Login = () => {
     setError("");
 
     try {
-      const user = await authService.login(formData.email, formData.password);
-      console.log("user obk=ject:", user.authUserState);
+      const userData = await authService.login(
+        formData.email,
+        formData.password
+      );
 
-      const success = signIn({
-        auth: {
-          token: user.token,
-          type: "Bearer",
-        },
+      setUser(userData.authUserState, userData.token);
 
-        // userState: user.authUserState,
-        userState: {
-          name: "The Dev",
-          uuid: "fff-fff-ffff",
-        },
-
-        refresh: user.refreshToken,
-      });
-
-      if (success) {
-        setUser(user, user.token);
+      const role = userData.authUserState.role;
+      if (role === "admin") {
         navigate("/");
+      } else if (role === "customer") {
+        navigate("/customers");
+      } else if (role === "seller") {
+        navigate("/sellers");
       } else {
-        setError("Login Failed. Please try again");
+        throw new Error("Unauthorized role");
       }
     } catch (error) {
-      console.log(error);
-      setError(error.message || "Failed to login");
+      setError(error.message || "Login failed");
     }
-
-    console.log("form submitted", formData);
   };
 
   return (

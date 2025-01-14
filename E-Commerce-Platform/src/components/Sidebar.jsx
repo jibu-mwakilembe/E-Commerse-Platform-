@@ -185,11 +185,9 @@ function Sidebar() {
                 <div className="flex gap-2 hover:bg-gray-700 rounded-md  p-2">
                   <div className="h-10 w-10 rounded-full bg-gray-500 "></div>
                   <div className="flex-1">
-                    <h1 className="text-white text-[12px]">
-                      {user?.authUserState?.name}
-                    </h1>
+                    <h1 className="text-white text-[12px]">{user?.name}</h1>
                     <p className="font-roboto text-[10px] text-stone-500  font-semibold ">
-                      {user?.authUserState?.email || "No Email"}
+                      {user?.email || "No Email"}
                     </p>
                   </div>
                   <div className=" flex items-center justify-center">
